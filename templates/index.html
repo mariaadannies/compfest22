@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+{% block title %}
+    index title
+{% endblock %}
+
+
+{% block body %}
+    <a href="{% url 'feed:post' %}">Add New Item</a>
+    
+    {% for post in posted %}
+       <h1 style="font-size:15px">{{ post.name }}</h1> <br>
+
+        {% thumbnail post.image "200x200" crop="center" as im %}
+            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+        {% endthumbnail %} <br>
+
+        {{ post.desc }} <br>
+
+        {{ post.price }} <br>
+
+        {{ post.created_time }} <br>
+
+        <button type="button">Buy</button>
+        <hr>
+    {% endfor %}
+{% endblock %}
+    
+    
