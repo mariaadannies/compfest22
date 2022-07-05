@@ -2,7 +2,7 @@
 {% load thumbnail %}
 
 {% block title %}
-    index title
+    Daftar Item
 {% endblock %}
 
 
@@ -22,7 +22,7 @@
 
         {{ post.created_time }} <br>
 
-        <button type="button">Buy</button>
+        <a href="{% url 'feed:buy' %}">Buy Item</a>
         <hr>
     {% endfor %}
 {% endblock %}

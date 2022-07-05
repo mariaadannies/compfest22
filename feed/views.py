@@ -1,9 +1,9 @@
 from ast import For
 from pipes import Template
 from django.views.generic import TemplateView, DetailView, FormView, DeleteView
-from django.urls import reverse_lazy
 from .forms import PostForm
 from .models import Post
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 class HomePageView(TemplateView):
@@ -28,9 +28,13 @@ class AddPostView(FormView):
             desc = form.cleaned_data['desc'],
             price = form.cleaned_data['price'],
         )
-        print("YEAAAAAAAAYYYYY")
+        print("okay")
         return super().form_valid(form)
 
 class DeletePostView(DeleteView):
+    # pst = Post.objects.get(pk=id)
+    # pst.delete()
+    # return redirect('index')
+    template_name = "confirm_buy.html"
     model = Post
-    success_url = reverse_lazy('autho')
+    success_url = "/"
