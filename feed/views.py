@@ -16,6 +16,16 @@ class HomePageView(TemplateView):
 
         return context
 
+class HomePageViewDesccendingView(TemplateView):
+    template_name = "index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['posted'] = Post.objects.all().order_by('-created_time', '-name')
+
+        return context
+
 class AddPostView(FormView):
     template_name = "new_post.html"
     form_class = PostForm
@@ -30,6 +40,34 @@ class AddPostView(FormView):
         )
         print("okay")
         return super().form_valid(form)
+
+# class BalanceBoxView(TemplateView):
+#     template_name = "balance.html"
+
+#     def get_context_data(self, **kwargs):
+
+#         balance = 0.00
+
+#         context = super().get_context_data(**kwargs)
+
+#         context['posted'] = Post.objects.all().order_by('-created_time', '-name')
+
+#         return balance
+
+# class AddWithdrawBalanceView(FormView):
+#     template_name = "add_withdraw_balance.html"
+#     form_class = BalanceForm
+#     success_url = "/"
+
+#     def form_valid(self, form):
+#         new_post = Post.objects.create(
+#             person = form.cleaned_data['person'],
+#             add_amount = form.cleaned_data['add'],
+#             withdraw_amount = form.cleaned_data['withdraw'],
+#         )
+#         print("okay")
+#         return super().form_valid(form)
+
 
 class DeletePostView(DeleteView):
     # pst = Post.objects.get(pk=id)

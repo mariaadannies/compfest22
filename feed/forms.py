@@ -8,3 +8,10 @@ class PostForm(forms.Form):
     desc = forms.CharField()
 
     price = forms.DecimalField()
+
+# class BalanceForm(forms.Form):
+#     person = forms.CharField()
+
+#     add_amount = forms.DecimalField()
+
+#     withdraw_amount = forms.DecimalField()

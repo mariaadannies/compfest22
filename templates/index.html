@@ -2,29 +2,64 @@
 {% load thumbnail %}
 
 {% block title %}
-    Daftar Item
+    Kantin Kejujuran
 {% endblock %}
 
 
 {% block body %}
-    <a href="{% url 'feed:post' %}">Add New Item</a>
-    
+
+    <h1 class="centertext selamatdatang">
+        Hi, welcome
+    </h1>
+
+    <h1 class="centertext kantinkejujuran">
+        @ KANTIN KEJUJURAN!
+    </h1><br>
+
+    <h1 class="othertext centertext">
+        Click for adding item
+    </h1>
+
+    <a href="{% url 'feed:post' %}">
+        <button class="button">Add Item</button>
+    </a>
+
+    <h1 class="othertext centertext">
+        Item for sell, check them out!
+    </h1>
+
     {% for post in posted %}
-       <h1 style="font-size:15px">{{ post.name }}</h1> <br>
+    <h1 class="centertext">{{ post.name }}</h1> <br>
 
-        {% thumbnail post.image "200x200" crop="center" as im %}
-            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-        {% endthumbnail %} <br>
+    {% thumbnail post.image "200x200" crop="center" as im %}
+        <img class="centerimage" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+    {% endthumbnail %} <br>
 
-        {{ post.desc }} <br>
 
-        {{ post.price }} <br>
+    <div class="centertext">
+    {{ post.desc }} <br>
+    </div>
 
-        {{ post.created_time }} <br>
+    <div class="centertext">
+    {{ post.price }} <br>
+    </div>
 
-        <a href="{% url 'feed:buy' %}">Buy Item</a>
-        <hr>
-    {% endfor %}
+
+    <div class="centertext">
+    {{ post.created_time }} <br>
+    </div>
+
+
+    <div class="centertext">
+    <a href="{% url 'feed:buy' %}">
+        <button class="button">Buy Item</button>
+    </a> <br>
+    </div>
+    <hr>
+{% endfor %}
+
+    
+    
 {% endblock %}
     
     

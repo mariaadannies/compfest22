@@ -11,6 +11,87 @@
         {% endblock title %}
             
     </title>
+    <style>
+        body {
+            font-family: arial;
+            font-size: 24px;
+            background-color: black;
+            color: whitesmoke;
+        }
+
+        .othertext {
+            font-size: 18px;
+        }
+
+        .selamatdatang {
+            font-family: arial;
+            font-size: 80px;
+
+        }
+
+        .kantinkejujuran {
+            font-family: arial;
+            font-size: 100px;
+
+        }
+
+        .form {
+            background-color: #303245;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: #eee;
+            font-size: 18px;
+            height: 100%;
+            outline: 0;
+            padding: 4px 20px 0;
+            width: 100%;
+        }
+
+        .input:focus ~ .cut,
+        .input:not(:placeholder-shown) ~ .cut {
+            transform: translateY(8px);
+        }
+
+        .centertext {
+            font-family: arial;
+            margin: 25px;
+            outline: dashed 1px black;
+            /* Center child horizontally*/
+            display: flex;
+            justify-content: center;
+        }
+
+        .centerimage {
+            margin: 0 auto;
+            /* Center child horizontally*/
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+        }
+
+        .button {
+            background-color: #08d;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: #eee;
+            cursor: pointer;
+            font-size: 18px;
+            height: 50px;
+            margin-top: 38px;
+            outline: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .button:active {
+            background-color: #06b;
+        }
+
+    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     

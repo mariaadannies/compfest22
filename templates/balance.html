@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+{% block title %}
+    Daftar Item
+{% endblock %}
+
+
+{% block body %}
+    <a href="{% url 'feed:post' %}">Add New Item</a>
+    {% endfor %}
+{% endblock %}
+    
+    
