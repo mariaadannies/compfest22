@@ -8,15 +8,43 @@
 
 {% block body %}
 
-    <div>
-        <form class="form centertext" method="POST" action="" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
+    <h3 class="centertext">Add Item</h3>
+
+    <div class="form-body">
+        <form class="form" method="POST" action="" enctype="multipart/form-data">
+            <input type="hidden" name="csrfmiddlewaretoken" value="ajMryhcrO5yueCF4g9N8pqIz400SJu2ptzXvZNppnk9OFtaku1eiPHXch3spDbBy">
+            <div class="input-container ic2">
+                <p><label  for="id_name">Name:</label><br>
+                    <input class="input" type="text" name="name" required="" id="id_name"></p><br>
+            </div>
+            
+            <div class="input-container ic2">
+                <p><label
+                    for="id_image">Image:</label> <br>
+                    <input type="file" name="image" required="" id="id_image"></p><br>
+            </div>
+                
+            <div class="input-container ic2">
+                <p><label for="id_desc">Desc:</label> <br>
+                    <input class="input" type="text" name="desc" required="" id="id_desc"></p><br>
+            </div>
+                
+            <div class="input-container ic2">
+                <p><label for="id_price">Price:</label><br>
+                    <input class="input" type="number" name="price" step="any" required="" id="id_price"></p><br>
+            </div>
+                
             <div>
                 <button class="button" type="submit">Submit</button>
             </div>
         </form>
     </div>
+
+    <div class="centertext">
+        <a href="{% url 'feed:index' %}">
+            <button class="button">Back to store</button>
+        </a> <br>
+        </div>
     
 {% endblock body %}
     

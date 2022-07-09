@@ -16,34 +16,50 @@
         @ KANTIN KEJUJURAN!
     </h1><br>
 
-    <h1 class="othertext centertext">
+    <h3 class="othertext centertext">
         Click for adding item
-    </h1>
+    </h3>
 
     <a href="{% url 'feed:post' %}">
         <button class="button">Add Item</button>
+    </a><br>
+    <a href="{% url 'feed:balance_box' %}">
+        <button class="button">Balance Box</button>
     </a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="arrow"></div>
+    <br>
+    <br>
+    <br>
+    <br>
 
-    <h1 class="othertext centertext">
+    <h1 id="top" class="centertext">
         Item for sell, check them out!
     </h1>
 
     {% for post in posted %}
-    <h1 class="centertext">{{ post.name }}</h1> <br>
+    <h1 class="centertext name">{{ post.name }}</h1> <br>
 
     {% thumbnail post.image "200x200" crop="center" as im %}
-        <img class="centerimage" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+        <img class="centerimage hover01 column" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
     {% endthumbnail %} <br>
 
+    <p class="centertext subtitle">Description:</p>
 
     <div class="centertext">
     {{ post.desc }} <br>
     </div>
 
+    <p class="centertext subtitle">Price:</p>
+
     <div class="centertext">
-    {{ post.price }} <br>
+        Rp{{ post.price }} <br>
     </div>
 
+    <p class="centertext subtitle">Posted on:</p>
 
     <div class="centertext">
     {{ post.created_time }} <br>
@@ -58,7 +74,11 @@
     <hr>
 {% endfor %}
 
-    
+<div class="centertext">
+    <a href="#top">
+        <button class="button">Back to top</button>
+    </a> <br>
+</div>
     
 {% endblock %}
     

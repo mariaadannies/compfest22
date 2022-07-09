@@ -36,6 +36,104 @@
         }
 
         .form {
+            background-color: #15172b;
+            border-radius: 20px;
+            box-sizing: border-box;
+            height: 500px;
+            padding: 20px;
+            width: 320px;
+        }
+
+        .form-body {
+            align-items: center;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .hover01 figure img {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+
+        .hover01 figure:hover img {
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+        }
+
+        span {
+            margin-left: 1em;
+            color: #aaa;
+            font-size: 85%;
+        }
+
+        .column {
+            margin: 15px 15px 0;
+            padding: 0;
+        }
+        .column:last-child {
+            padding-bottom: 60px;
+        }
+        .column::after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+        .column div {
+            position: relative;
+            float: left;
+            width: 300px;
+            height: 200px;
+            margin: 0 0 0 25px;
+            padding: 0;
+        }
+        .column div:first-child {
+            margin-left: 0;
+        }
+        .column div span {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            z-index: -1;
+            display: block;
+            width: 300px;
+            margin: 0;
+            padding: 0;
+            color: #444;
+            font-size: 18px;
+            text-decoration: none;
+            text-align: center;
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+            opacity: 0;
+        }
+        figure {
+            width: 300px;
+            height: 200px;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            overflow: hidden;
+        }
+        figure:hover+span {
+            bottom: -36px;
+            opacity: 1;
+        }
+
+        .input-container {
+            height: 50px;
+            position: relative;
+            width: 100%;
+        }
+
+        .ic2 {
+            margin-top: 30px;
+        }
+
+        .input {
             background-color: #303245;
             border-radius: 12px;
             border: 0;
@@ -48,9 +146,54 @@
             width: 100%;
         }
 
+        .cut {
+            background-color: #15172b;
+            border-radius: 10px;
+            height: 20px;
+            left: 20px;
+            position: absolute;
+            top: -20px;
+            transform: translateY(0);
+            transition: transform 200ms;
+            width: 76px;
+        }
+
+        .cut-short {
+            width: 50px;
+        }
+
+        .name {
+            font-size: 35px;
+        }
+
         .input:focus ~ .cut,
         .input:not(:placeholder-shown) ~ .cut {
             transform: translateY(8px);
+        }
+
+        .placeholder {
+            color: #65657b;
+            font-family: sans-serif;
+            left: 20px;
+            line-height: 14px;
+            pointer-events: none;
+            position: absolute;
+            transform-origin: 0 50%;
+            transition: transform 200ms, color 200ms;
+            top: 20px;
+        }
+
+        .input:focus ~ .placeholder,
+        .input:not(:placeholder-shown) ~ .placeholder {
+            transform: translateY(-30px) translateX(10px) scale(0.75);
+        }
+
+        .input:not(:placeholder-shown) ~ .placeholder {
+            color: #808097;
+        }
+
+        .input:focus ~ .placeholder {
+            color: #dc2f55;
         }
 
         .centertext {
@@ -88,6 +231,19 @@
 
         .button:active {
             background-color: #06b;
+        }
+
+        .arrow {
+        content:'⇊';
+        font-size:.9em;
+        position:absolute;
+        left:50%;
+        margin-left:-.7em;
+        border:solid .13em white;
+        border-radius:10em;
+        width:1.4em;
+        height:1.4em;
+        line-height:1.3em;
         }
 
     </style>

@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load thumbnail %}
 
 {% block title %}
     Daftar Item
@@ -7,8 +6,34 @@
 
 
 {% block body %}
-    <a href="{% url 'feed:post' %}">Add New Item</a>
-    {% endfor %}
+    <h3 class="centertext">Balance Box</h3>
+
+    <p class="centertext">Balance: Rp</p>
+
+    <div class="form-body">
+        <form class="form" method="POST" action="" enctype="multipart/form-data">
+            <input type="hidden" name="csrfmiddlewaretoken" value="ajMryhcrO5yueCF4g9N8pqIz400SJu2ptzXvZNppnk9OFtaku1eiPHXch3spDbBy">
+            
+            <div class="input-container ic2">
+                <p><label for="id_price">Amount:</label><br>
+                    <input class="input" type="number" name="price" step="any" required="" id="id_price"></p><br>
+            </div>
+                
+            <div>
+                <button class="button" type="submit">Add</button>
+            </div>
+
+            <div>
+                <button class="button" type="submit">Withdraw</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="centertext">
+        <a href="{% url 'feed:index' %}">
+            <button class="button">Back to store</button>
+        </a> <br>
+        </div>
 {% endblock %}
     
     

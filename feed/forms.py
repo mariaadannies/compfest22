@@ -9,9 +9,7 @@ class PostForm(forms.Form):
 
     price = forms.DecimalField()
 
-# class BalanceForm(forms.Form):
-#     person = forms.CharField()
+class BalanceForm(forms.Form):
+    add_amount = forms.DecimalField()
 
-#     add_amount = forms.DecimalField()
-
-#     withdraw_amount = forms.DecimalField()
+    withdraw_amount = forms.DecimalField()
